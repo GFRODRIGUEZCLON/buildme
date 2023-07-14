@@ -1,0 +1,74 @@
+#1 [internal] load build definition from Dockerfile
+#1 sha256:5f290896f82ddc439be38760bc1d55da9141230cfdc313b836fb89e691ada25b
+#1 transferring dockerfile: 35B done
+#1 DONE 0.2s
+
+#2 [internal] load .dockerignore
+#2 sha256:de4f8e6d29f8f85386eabf0470e2acb312446f7a7d4cc4ee136cea9d7a836f27
+#2 transferring context: 2B done
+#2 DONE 0.2s
+
+#3 resolve image config for docker.io/docker/dockerfile:1
+#3 sha256:ac072d521901222eeef550f52282877f196e16b0247844be9ceb1ccc1eac391d
+#3 DONE 0.2s
+
+#4 docker-image://docker.io/docker/dockerfile:1@sha256:39b85bbfa7536a5feceb7372a0817649ecb2724562a38360f4d6a7782a409b14
+#4 sha256:57c85e6929bd09183df396146f0d627479bb510ec8aa151663925f38dad12fe9
+#4 CACHED
+
+#6 [internal] load .dockerignore
+#6 sha256:196a269685a62af573da342053d45100c082e360194f207f9e4b246d5a3bcd86
+#6 DONE 0.0s
+
+#5 [internal] load build definition from Dockerfile
+#5 sha256:b77974aae0cfad4e77ab46f3f6c1a3bf6d255fc7954aa8e79440b9688ac31e0a
+#5 DONE 0.0s
+
+#7 [internal] load metadata for docker.io/library/golang:1.20-alpine
+#7 sha256:314b1c0d18bc0f30e1337efaaae91e0f1e3ff1486db53b13c726003ca4e3d736
+#7 DONE 0.0s
+
+#8 [base 1/5] FROM docker.io/library/golang:1.20-alpine
+#8 sha256:6acdf6c21c7065f5aa6015a44f031f8fe85edc8b1b15aa2fa71c07386ad8fe53
+#8 DONE 0.0s
+
+#10 [internal] load build context
+#10 sha256:41458e68826c22d920fd3982d0e8cb6e2c8dccc2bef7de234cd1654e1d2cd34a
+#10 transferring context: 32.04kB done
+#10 DONE 0.1s
+
+#9 [base 2/5] WORKDIR /src
+#9 sha256:9e1b5258d93b7e871644d63161024885a680ff87bbd88df2b973e3662aac43a7
+#9 CACHED
+
+#11 [base 3/5] COPY go.mod go.sum /
+#11 sha256:3b479235a5cd586e515f81a0626ea75f5183b3ac5741ca7046dc903c638f3578
+#11 DONE 0.2s
+
+#12 [base 4/5] RUN --mount=type=cache,target=/go/pkg/mod/          go mod download -x
+#12 sha256:12ea81c09c284228879b602d1ebfe8c9f4b7458b0ab61ca7a94633f6d5047258
+#12 0.578 # get https://proxy.golang.org/github.com/go-chi/chi/v5/@v/v5.0.8.mod
+#12 0.639 # get https://proxy.golang.org/github.com/go-chi/chi/v5/@v/v5.0.8.mod: 200 OK (0.061s)
+#12 0.641 # get https://proxy.golang.org/github.com/go-chi/chi/v5/@v/v5.0.8.info
+#12 0.648 # get https://proxy.golang.org/github.com/go-chi/chi/v5/@v/v5.0.8.info: 200 OK (0.007s)
+#12 0.654 # get https://proxy.golang.org/github.com/go-chi/chi/v5/@v/v5.0.8.zip
+#12 0.661 # get https://proxy.golang.org/github.com/go-chi/chi/v5/@v/v5.0.8.zip: 200 OK (0.007s)
+#12 DONE 0.9s
+
+#13 [base 5/5] COPY . .
+#13 sha256:6455979b83bf7eaae8765468f72495921989c20afaaaa20e86483031e2002696
+#13 DONE 0.3s
+
+#14 [build-client 1/1] RUN --mount=type=cache,target=/go/pkg/mod/          go build -o /bin/client ./cmd/client
+#14 sha256:f0e7b4b06e6ff0cd8b334862e7772765ce8c21b805747d08ac3836edfdce1bb6
+#14 DONE 25.3s
+
+#15 [client 1/1] COPY --from=build-client /bin/client /bin/
+#15 sha256:ef17518ca18db062724f6ed769bbfe5a7eb3f2b11bd9dadba71c22ef14462e0d
+#15 CACHED
+
+#16 exporting to image
+#16 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#16 exporting layers done
+#16 writing image sha256:c61b782fbc4766fdeb5d9ec0d0b6cb584e95b87271fa192dca4d5e2a473ef569 0.1s done
+#16 DONE 0.1s
